@@ -14,11 +14,9 @@ There is only one extremely useful feature:
 
 - Xilence removes all that annoying HTML and CSS code from your rails backtrace for ajax requests
 
-## Sandbox ##
+## In Action ##
 
-Just open your firebug/safari console and click on the broken ajax action link
-
-You should see something like this:  
+Just install plugin, open your firebug/safari console and click on the broken ajax action link and you should see something like this:  
 
 ![Firebug xilence output](http://inem.github.com/images/xilence_output.png)
 
