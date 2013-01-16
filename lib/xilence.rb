@@ -1,21 +1,24 @@
+require "xilence/version"
+
 module ActionController
   module Rescue
-    # Render detailed diagnostics for unhandled exceptions rescued from
-    # a controller action.
-    def rescue_action_locally(exception)
-      @template.instance_variable_set("@exception", exception)
-      @template.instance_variable_set("@rescues_path", RESCUES_TEMPLATE_PATH)
+
+    def rescue_with_handler(exception)
       if request.xhr?
-        linebreak = "\n"
-        render :text => ("\n#{exception.class} (#{exception.message}):\n  " + clean_backtrace(exception).join("#{linebreak}  ") + linebreak*2),
-               :status => 500
+        linebreaker = "\n  "
+        title = "#{exception.class} (#{exception.message}):#{linebreaker}"
+        backtrace = exception.backtrace.join(linebreaker)
+
+        render text: (title + backtrace), status: 500
       else
-        @template.instance_variable_set("@contents",
-          @template.render(:file => template_path_for_local_rescue(exception)))
-        response.content_type = Mime::HTML
-        render_for_file(rescues_path("layout"),
-          response_code_for_rescue(exception))
+        if (exception.respond_to?(:original_exception) &&
+            (orig_exception = exception.original_exception) &&
+            handler_for_rescue(orig_exception))
+          exception = orig_exception
+        end
+        super(exception)
       end
     end
+
   end
 end
