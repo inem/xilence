@@ -1,4 +1,4 @@
-Copyright (c) 2013 Maxim Kaschenko
+Copyright (c) 2009 Ivan Nemytchenko
 
 MIT License
 
