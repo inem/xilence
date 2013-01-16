@@ -6,10 +6,10 @@ require 'xilence/version'
 Gem::Specification.new do |gem|
   gem.name          = "xilence"
   gem.version       = Xilence::VERSION
-  gem.authors       = ["Maxim Kaschenko"]
-  gem.email         = ["mkaschenko@me.com"]
+  gem.authors       = ["Ivan Nemytchenko", "Maxim Kaschenko"]
+  gem.email         = ["nemytchenko@gmail.com"]
   gem.description   = "Rails backtrace silencer for ajax requests"
-  gem.summary       = gem.description
+  gem.summary       = "dummy summary"
   gem.homepage      = "http://inem.github.com/xilence.html"
 
   gem.files         = `git ls-files`.split($/)
