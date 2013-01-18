@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Ivan Nemytchenko", "Maxim Kaschenko"]
   gem.email         = ["nemytchenko@gmail.com"]
   gem.description   = "Rails backtrace silencer for ajax requests"
-  gem.summary       = "dummy summary"
+  gem.summary       = "Clean and shiny backtrace for rails errors in your browser console. No weird HTML and CSS stuff."
   gem.homepage      = "http://inem.github.com/xilence.html"
 
   gem.files         = `git ls-files`.split($/)
